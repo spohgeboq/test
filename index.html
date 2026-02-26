@@ -25,163 +25,39 @@
         const ChevronRight = ({className}) => <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>;
         const ChevronLeft = ({className}) => <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>;
         const Award = ({className}) => <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>;
-        const CheckSquare = ({className}) => <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>;
-        const Square = ({className}) => <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/></svg>;
-        const AlertCircle = ({className}) => <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>;
         const CircleIcon = ({className}) => <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/></svg>;
 
-        // --- База из 100 уникальных вопросов ---
+        // --- База из 85 вопросов (только с одним правильным ответом) ---
         const allQuestions = [
-          // 15 вопросов с множественным выбором
-          {
-            id: 101,
-            question: "What two motherboard components control the system boot operations? (Choose two.)",
-            options: ["BIOS chip", "UEFI chip", "Northbridge", "RAM"],
-            correctAnswers: ["BIOS chip", "UEFI chip"]
-          },
-          {
-            id: 102,
-            question: "What are two safety hazards when dealing with laser printers? (Choose two.)",
-            options: ["high voltage", "hot components", "heavy metals", "loud noise"],
-            correctAnswers: ["high voltage", "hot components"]
-          },
-          {
-            id: 103,
-            question: "Which three features can be configured in the BIOS settings to secure a computer? (Choose three.)",
-            options: ["drive encryption", "TPM", "passwords", "MAC filtering", "TKIP key"],
-            correctAnswers: ["drive encryption", "TPM", "passwords"]
-          },
-          {
-            id: 104,
-            question: "When a new motherboard is being installed, between which two components must thermal compound be applied? (Choose two.)",
-            options: ["CPU", "heat sink", "RAM", "Chipset", "Power Supply"],
-            correctAnswers: ["CPU", "heat sink"]
-          },
-          {
-            id: 105,
-            question: "After a technician tests a theory of probable causes, what two actions should the technician take if the testing did not identify an exact cause? (Choose two.)",
-            options: [
-              "Establish a new theory of probable causes.",
-              "Document each test tried that did not correct the problem.",
-              "Replace the motherboard immediately.",
-              "Format the hard drive."
-            ],
-            correctAnswers: ["Establish a new theory of probable causes.", "Document each test tried that did not correct the problem."]
-          },
-          {
-            id: 106,
-            question: "What are two types of wired high-speed Internet connections? (Choose two.)",
-            options: ["cable", "DSL", "cellular", "satellite", "dial-up"],
-            correctAnswers: ["cable", "DSL"]
-          },
-          {
-            id: 107,
-            question: "In what two situations would UDP be better than TCP as the preferred transport protocol? (Choose two.)",
-            options: [
-              "when a faster delivery mechanism is needed",
-              "when applications do not need to guarantee delivery of the data",
-              "when downloading large files like OS updates",
-              "when sending a secure email"
-            ],
-            correctAnswers: ["when a faster delivery mechanism is needed", "when applications do not need to guarantee delivery of the data"]
-          },
-          {
-            id: 108,
-            question: "What three values must be added to the IPv4 properties of a NIC in order for a computer to have basic connectivity with the network? (Choose three.)",
-            options: ["subnet mask", "default gateway", "IP address", "MAC address", "DHCP server address"],
-            correctAnswers: ["subnet mask", "default gateway", "IP address"]
-          },
-          {
-            id: 109,
-            question: "Which two laptop components are considered replaceable by the customer (CRU)? (Choose two.)",
-            options: ["battery", "RAM", "display", "motherboard", "touchpad"],
-            correctAnswers: ["battery", "RAM"]
-          },
-          {
-            id: 110,
-            question: "A user wants to synchronize some apps, movies, music, and ebooks between mobile devices. What are the two types of connections used to synchronize this type of data? (Choose two.)",
-            options: ["Wi-Fi", "USB", "NFC", "Bluetooth"],
-            correctAnswers: ["Wi-Fi", "USB"]
-          },
-          {
-            id: 111,
-            question: "Which three computer components require separate cabling for power? (Choose three.)",
-            options: ["video graphics cards", "internal SATA hard drives", "case and CPU fans", "RAM modules", "PCIe sound cards"],
-            correctAnswers: ["video graphics cards", "internal SATA hard drives", "case and CPU fans"]
-          },
-          {
-            id: 112,
-            question: "What two effects might suggest that an incorrect printer driver is loaded on the Windows PC? (Choose two.)",
-            options: [
-              "The printer is printing unknown characters.",
-              "The printer does not print a test page.",
-              "The printer refuses to power on.",
-              "The paper jams constantly."
-            ],
-            correctAnswers: ["The printer is printing unknown characters.", "The printer does not print a test page."]
-          },
-          {
-            id: 113,
-            question: "What are two probable causes of a user unable to access local resources such as file shares or printers on a wired network? (Choose two.)",
-            options: [
-              "bad cabling",
-              "DNS name resolution not working",
-              "monitor is turned off",
-              "battery is low"
-            ],
-            correctAnswers: ["bad cabling", "DNS name resolution not working"]
-          },
-          {
-            id: 114,
-            question: "Which two tools are available to transfer user data and settings from an old Windows computer to a Windows operating system on a new computer? (Choose two.)",
-            options: ["Windows Easy Transfer", "User State Migration tool", "Disk Cleanup", "Device Manager"],
-            correctAnswers: ["Windows Easy Transfer", "User State Migration tool"]
-          },
-          {
-            id: 115,
-            question: "What are two symptoms that indicate that a computer system may be a victim of DNS spoofing? (Choose two.)",
-            options: [
-              "The output of the nslookup command reports an unknown resolver name and IP address.",
-              "Entering www.cisco.com in a browser displays a popular gaming site instead of the Cisco homepage.",
-              "The computer cannot get an IP address from DHCP.",
-              "The MAC address of the NIC has changed randomly."
-            ],
-            correctAnswers: [
-              "The output of the nslookup command reports an unknown resolver name and IP address.",
-              "Entering www.cisco.com in a browser displays a popular gaming site instead of the Cisco homepage."
-            ]
-          },
-          
-          // --- Вопросы с одним правильным ответом ---
           {
             id: 1,
             question: "Which PC motherboard bus is used to connect the CPU to RAM and other motherboard components?",
             options: ["SATA", "PCIe", "front-side", "PCI"],
-            correctAnswers: ["front-side"]
+            correctAnswer: "front-side"
           },
           {
             id: 2,
             question: "If you don't want to use static IP addresses, but want to dynamically assign IP addresses to computers instead, what network protocol can you use?",
             options: ["DHCP", "TFTP", "Kerberos", "NTP"],
-            correctAnswers: ["DHCP"]
+            correctAnswer: "DHCP"
           },
           {
             id: 3,
             question: "Which port allows for the transmission of high definition video using the DisplayPort protocol?",
             options: ["DVI", "VGA", "RCA", "Thunderbolt"],
-            correctAnswers: ["Thunderbolt"]
+            correctAnswer: "Thunderbolt"
           },
           {
             id: 4,
             question: "A user playing a game on a gaming PC with a standard EIDE 5400 RPM hard drive finds the performance unsatisfactory. Which hard drive upgrade would improve performance while providing more reliability and more energy efficiency?",
             options: ["a 7200 RPM SATA hard drive", "an SSD", "a 10,000 RPM SATA hard drive", "a 7200 RPM EIDE hard drive"],
-            correctAnswers: ["an SSD"]
+            correctAnswer: "an SSD"
           },
           {
             id: 5,
             question: "Which type of drive is typically installed in a 5.25 inch (13.34 cm) bay?",
             options: ["SSD", "flash drive", "optical drive", "hard drive"],
-            correctAnswers: ["optical drive"]
+            correctAnswer: "optical drive"
           },
           {
             id: 6,
@@ -192,31 +68,31 @@
               "a smaller, more condensed memory module that provides random access data storage",
               "a small circuit board that holds several memory chips"
             ],
-            correctAnswers: ["a chip that is nonvolatile and can be erased by exposing it to strong ultraviolet light"]
+            correctAnswer: "a chip that is nonvolatile and can be erased by exposing it to strong ultraviolet light"
           },
           {
             id: 7,
             question: "A customer comes into a computer parts and service store. The customer is looking for a device to allow users to tap and pay for their purchases. What device should the store owner recommend to accomplish the required task?",
             options: ["magstripe reader", "NFC device", "joystick or gamepad", "projector"],
-            correctAnswers: ["NFC device"]
+            correctAnswer: "NFC device"
           },
           {
             id: 8,
             question: "A customer comes into a computer parts and service store. The customer is looking for a device to help a person with accessibility issues input instructions into a laptop by using a pen. What device should the store owner recommend to accomplish the required task?",
             options: ["stylus", "NFC device", "keyboard", "biometric scanner"],
-            correctAnswers: ["stylus"]
+            correctAnswer: "stylus"
           },
           {
             id: 9,
             question: "What does the “A” in P-A-S-S remind a person to do while using a fire extinguisher?",
             options: ["Adjust the pressure.", "Activate the fire extinguisher.", "Aim the fire extinguisher at the flames.", "Aim the fire extinguisher at the base of the fire."],
-            correctAnswers: ["Aim the fire extinguisher at the base of the fire."]
+            correctAnswer: "Aim the fire extinguisher at the base of the fire."
           },
           {
             id: 10,
             question: "A customer comes into a computer parts and service store. The customer is looking for a device to provide secure access to the central server room using a retinal scan. What device should the store owner recommend to accomplish the required task?",
             options: ["flatbed scanner", "NFC device", "keyboard", "biometric scanner"],
-            correctAnswers: ["biometric scanner"]
+            correctAnswer: "biometric scanner"
           },
           {
             id: 11,
@@ -227,7 +103,7 @@
               "It is typically owned and managed by a single home or business.",
               "It connects multiple networks that are geographically separated."
             ],
-            correctAnswers: ["It connects multiple networks that are geographically separated."]
+            correctAnswer: "It connects multiple networks that are geographically separated."
           },
           {
             id: 12,
@@ -238,31 +114,31 @@
               "A server requests data, and a client responds to that request.",
               "Clients and servers are different names for the same thing."
             ],
-            correctAnswers: ["A client requests data, and a server responds to that request."]
+            correctAnswer: "A client requests data, and a server responds to that request."
           },
           {
             id: 13,
             question: "Which network protocol is used to automatically assign an IP address to a computer on a network?",
             options: ["FTP", "SMTP", "ICMP", "DHCP", "APIPA"],
-            correctAnswers: ["DHCP"]
+            correctAnswer: "DHCP"
           },
           {
             id: 14,
             question: "What does LAN stand for?",
             options: ["Little area network", "Local area network", "Large area network", "Locally available network"],
-            correctAnswers: ["Local area network"]
+            correctAnswer: "Local area network"
           },
           {
             id: 15,
             question: "A customer comes into a computer parts and service store. The customer is looking for a device to allow secure access to the main doors of the company by swiping an ID card. What device should the store owner recommend to accomplish the required task?",
             options: ["projector", "AR headset", "joystick or gamepad", "magstripe reader"],
-            correctAnswers: ["magstripe reader"]
+            correctAnswer: "magstripe reader"
           },
           {
             id: 16,
             question: "Which type of interface was originally developed for high-definition televisions and is also popular to use with computers to connect audio and video devices?",
             options: ["HDMI", "USB", "DVI", "FireWire", "VGA"],
-            correctAnswers: ["HDMI"]
+            correctAnswer: "HDMI"
           },
           {
             id: 17,
@@ -273,43 +149,43 @@
               "It always requires a headset.",
               "It superimposes images and audio over the real world in real time."
             ],
-            correctAnswers: ["It superimposes images and audio over the real world in real time."]
+            correctAnswer: "It superimposes images and audio over the real world in real time."
           },
           {
             id: 18,
             question: "A technician is building a thick client workstation that would be used to run a database and wants to ensure the best protection against errors. What type of memory would be best suited for this?",
             options: ["DDR2", "RDRAM", "ECC", "DDR3"],
-            correctAnswers: ["ECC"]
+            correctAnswer: "ECC"
           },
           {
             id: 19,
             question: "A network specialist has been hired to install a network in a company that assembles airplane engines. Because of the nature of the business, the area is highly affected by electromagnetic interference. Which type of network media should be recommended so that the data communication will not be affected by EMI?",
             options: ["fiber optic", "UTP", "coaxial", "STP"],
-            correctAnswers: ["fiber optic"]
+            correctAnswer: "fiber optic"
           },
           {
             id: 20,
             question: "Which adapter would a technician install in a desktop computer to enable a video signal to be recorded from a video recorder to the computer hard drive?",
             options: ["network interface card", "video capture card", "video adapter", "TV tuner card"],
-            correctAnswers: ["video capture card"]
+            correctAnswer: "video capture card"
           },
           {
             id: 21,
             question: "A user tries to install an application on a Windows 10 Pro PC but it fails. The user tries to uninstall the application but it fails to uninstall. What option can be used to address this issue without loss of data or applications?",
             options: ["Use Advanced Start-up", "Restart the Windows Update services", "Use Restore Point", "Uninstall and reinstall the device using Device Manager"],
-            correctAnswers: ["Use Restore Point"]
+            correctAnswer: "Use Restore Point"
           },
           {
             id: 22,
             question: "What could be used in conjunction with a laptop in order to read flash media?",
             options: ["SSD", "M.2 card", "Card reader", "SO-DIMM"],
-            correctAnswers: ["Card reader"]
+            correctAnswer: "Card reader"
           },
           {
             id: 23,
             question: "Which type of hypervisor is implemented when a user with a laptop running macOS installs a Windows virtual OS instance?",
             options: ["Virtual machine", "Bare metal", "Type 1", "Type 2"],
-            correctAnswers: ["Type 2"]
+            correctAnswer: "Type 2"
           },
           {
             id: 24,
@@ -320,25 +196,25 @@
               "It is the interface in Windows that identifies a unique printer attached to the workstation.",
               "It is software that converts a document into the format that a printer can understand."
             ],
-            correctAnswers: ["It is software that converts a document into the format that a printer can understand."]
+            correctAnswer: "It is software that converts a document into the format that a printer can understand."
           },
           {
             id: 25,
             question: "What type of connection would be used to connect a printer directly to the network?",
             options: ["FireWire", "USB", "Serial", "Ethernet"],
-            correctAnswers: ["Ethernet"]
+            correctAnswer: "Ethernet"
           },
           {
             id: 26,
             question: "A software company has groups of developers located in different cities around the world. The company is using a cloud-based development environment so that all developers can access the same software development tools. Which cloud service is used by the company?",
             options: ["SaaS", "IaaS", "ITaaS", "PaaS"],
-            correctAnswers: ["PaaS"]
+            correctAnswer: "PaaS"
           },
           {
             id: 27,
             question: "Which file sharing mechanism is included with Microsoft Windows 10 to provide simple file sharing via Wi-Fi and Bluetooth?",
             options: ["AirDrop", "Nearby Sharing", "NFC", "Workgroup", "Homegroup"],
-            correctAnswers: ["Nearby Sharing"]
+            correctAnswer: "Nearby Sharing"
           },
           {
             id: 28,
@@ -349,25 +225,25 @@
               "The computer needs a replacement operating system.",
               "There is no response from the mouse or keyboard."
             ],
-            correctAnswers: ["The computer needs a replacement operating system."]
+            correctAnswer: "The computer needs a replacement operating system."
           },
           {
             id: 29,
             question: "What feature of an operating system allows it to support two or more CPUs?",
             options: ["Multiprocessing", "Multiuser support", "Multithreading", "Multitasking"],
-            correctAnswers: ["Multiprocessing"]
+            correctAnswer: "Multiprocessing"
           },
           {
             id: 30,
             question: "Which document function can a networked MFD provide that is unavailable on a standalone document copier or printer?",
             options: ["Scan to paper", "Scan to local memory", "Scan to multiple paper copies", "Scan to email"],
-            correctAnswers: ["Scan to email"]
+            correctAnswer: "Scan to email"
           },
           {
             id: 31,
             question: "Android apps sometimes require extra privileges. How do Android apps run to manage this securely?",
             options: ["In a walled garden", "In a sandbox", "In guest mode", "Through a proxy service"],
-            correctAnswers: ["In a sandbox"]
+            correctAnswer: "In a sandbox"
           },
           {
             id: 32,
@@ -378,7 +254,7 @@
               "Each icon is a shortcut of the app.",
               "Each icon links to multiple instances of the actual app."
             ],
-            correctAnswers: ["Each icon represents the actual app."]
+            correctAnswer: "Each icon represents the actual app."
           },
           {
             id: 33,
@@ -389,7 +265,7 @@
               "Per-document options override global options.",
               "It is not possible to configure global options."
             ],
-            correctAnswers: ["Per-document options override global options."]
+            correctAnswer: "Per-document options override global options."
           },
           {
             id: 34,
@@ -400,19 +276,19 @@
               "It speeds up the Windows 10 start time.",
               "It enables the quadruple channels on a 64-bit processor."
             ],
-            correctAnswers: ["It enables Windows to treat an external flash device as a hard drive cache."]
+            correctAnswer: "It enables Windows to treat an external flash device as a hard drive cache."
           },
           {
             id: 35,
             question: "What is a good source for safely downloading Android apps?",
             options: ["The Apple App Store", "Freeware sites", "Google Play", "iTunes"],
-            correctAnswers: ["Google Play"]
+            correctAnswer: "Google Play"
           },
           {
             id: 36,
             question: "How does virtualization help with disaster recovery within a data center?",
             options: ["Improvement of business practices", "Guarantee of power", "Support of live migration", "Supply of consistent air flow"],
-            correctAnswers: ["Support of live migration"]
+            correctAnswer: "Support of live migration"
           },
           {
             id: 37,
@@ -423,13 +299,13 @@
               "It is commonly used in computers with UEFI firmware.",
               "It cannot be used in a multiboot environment."
             ],
-            correctAnswers: ["It is commonly used in computers with UEFI firmware."]
+            correctAnswer: "It is commonly used in computers with UEFI firmware."
           },
           {
             id: 38,
             question: "What mechanism is used in a laser printer to permanently fuse the toner to the paper?",
             options: ["Light", "Pressure", "Electrical charge", "Heat"],
-            correctAnswers: ["Heat"]
+            correctAnswer: "Heat"
           },
           {
             id: 39,
@@ -440,43 +316,43 @@
               "All user data and settings are deleted.",
               "The OS is deleted and data is transferred to the cloud."
             ],
-            correctAnswers: ["All user data and settings are deleted."]
+            correctAnswer: "All user data and settings are deleted."
           },
           {
             id: 40,
             question: "In laser printing, what is the name of the process of applying toner to the latent image on the drum?",
             options: ["Charging", "Developing", "Transferring", "Fusing"],
-            correctAnswers: ["Developing"]
+            correctAnswer: "Developing"
           },
           {
             id: 41,
             question: "Which cloud-based storage service does Microsoft provide for backups?",
             options: ["OneDrive", "Google Sync", "Dropbox", "iCloud"],
-            correctAnswers: ["OneDrive"]
+            correctAnswer: "OneDrive"
           },
           {
             id: 42,
             question: "A small college wishes to deploy a learning management system (LMS) and is looking for a hosted solution. Which type of cloud-based solution would help the college to achieve the goal?",
             options: ["Virtual desktop infrastructure", "Dropbox", "Virtual application stream", "Office 365"],
-            correctAnswers: ["Office 365"]
+            correctAnswer: "Office 365"
           },
           {
             id: 43,
             question: "When the device roams out of the range of any Wi-Fi networks, it can connect to the cellular data network if this feature is enabled. To which OS does this relate?",
             options: ["Both", "Android", "iOS", "Windows Phone"],
-            correctAnswers: ["Both"]
+            correctAnswer: "Both"
           },
           {
             id: 44,
             question: "Which laptop component would be considered an FRU?",
             options: ["Battery", "SODIMM", "Display", "External card reader"],
-            correctAnswers: ["Display"]
+            correctAnswer: "Display"
           },
           {
             id: 45,
             question: "What is the most commonly used method to close an application that appears to be frozen on an OS X-based computer?",
             options: ["Use Task Manager", "Access the Status menu", "Use Force Quit", "Access the Notification Center"],
-            correctAnswers: ["Use Force Quit"]
+            correctAnswer: "Use Force Quit"
           },
           {
             id: 201,
@@ -487,31 +363,31 @@
               "A software used to secure Wi-Fi networks.", 
               "A cooling element on a motherboard."
             ],
-            correctAnswers: ["Where devices connect using Wi-Fi to share a cellular data connection."]
+            correctAnswer: "Where devices connect using Wi-Fi to share a cellular data connection."
           },
           {
             id: 202,
             question: "Which tool can protect computer components from the effects of ESD?",
             options: ["antistatic wrist strap", "rubber-soled shoes", "surge protector", "compressed air"],
-            correctAnswers: ["antistatic wrist strap"]
+            correctAnswer: "antistatic wrist strap"
           },
           {
             id: 203,
             question: "Which IEEE standard operates at wireless frequencies in both the 5 GHz and 2.4 GHz ranges?",
             options: ["802.11n", "802.11a", "802.11b", "802.11g"],
-            correctAnswers: ["802.11n"]
+            correctAnswer: "802.11n"
           },
           {
             id: 204,
             question: "Which of the following is an advantage of Server Virtualization?",
             options: ["Reduced cost", "Increased physical space requirements", "Eliminates the need for an OS", "Requires less RAM per VM"],
-            correctAnswers: ["Reduced cost"]
+            correctAnswer: "Reduced cost"
           },
           {
             id: 205,
             question: "How is a power supply commonly attached to a tower case?",
             options: ["screws", "thermal paste", "standoffs", "zip ties"],
-            correctAnswers: ["screws"]
+            correctAnswer: "screws"
           },
           {
             id: 206,
@@ -522,7 +398,7 @@
               "to prevent data theft over the network", 
               "to reduce the operating temperature of the hard drive"
             ],
-            correctAnswers: ["to provide a path of least resistance for stray current"]
+            correctAnswer: "to provide a path of least resistance for stray current"
           },
           {
             id: 207,
@@ -533,25 +409,25 @@
               "They only run command-line interfaces.", 
               "They do not require memory to operate."
             ],
-            correctAnswers: ["They are special operating systems designed for mobile devices."]
+            correctAnswer: "They are special operating systems designed for mobile devices."
           },
           {
             id: 208,
             question: "Which feature helps conserve power by physically turning off the display on a laptop?",
             options: ["A cutoff switch", "A screensaver", "A BIOS password", "A docking station"],
-            correctAnswers: ["A cutoff switch"]
+            correctAnswer: "A cutoff switch"
           },
           {
             id: 209,
             question: "What is used to prevent the motherboard from touching metal portions of the computer case?",
             options: ["standoffs", "thermal compound", "ZIF sockets", "heat sinks"],
-            correctAnswers: ["standoffs"]
+            correctAnswer: "standoffs"
           },
           {
             id: 210,
             question: "In Augmented Reality (AR), what is integrated with what is seen in the real world?",
             options: ["Computer graphics.", "Virtual reality headsets.", "Haptic feedback suits.", "Physical keyboards."],
-            correctAnswers: ["Computer graphics."]
+            correctAnswer: "Computer graphics."
           },
           {
             id: 211,
@@ -562,7 +438,7 @@
               "A cloud-based operating system accessed via a web browser.", 
               "The firmware installed on the motherboard."
             ],
-            correctAnswers: ["The operating system of the physical computer controlled by a user."]
+            correctAnswer: "The operating system of the physical computer controlled by a user."
           },
           {
             id: 212,
@@ -573,7 +449,7 @@
               "A software program that filters spam emails", 
               "A component that provides power to the motherboard"
             ],
-            correctAnswers: ["A device that knows how to forward data between independent networks"]
+            correctAnswer: "A device that knows how to forward data between independent networks"
           },
           {
             id: 213,
@@ -584,25 +460,25 @@
               "A biometric sensor for fingerprint scanning", 
               "A miniature solid state drive"
             ],
-            correctAnswers: ["An embedded microprocessor that can be loaded with data"]
+            correctAnswer: "An embedded microprocessor that can be loaded with data"
           },
           {
             id: 214,
             question: "When installing a new high-end video adapter card, what may be needed to operate this video adapter card?",
             options: ["Two 8-pin power connectors", "A standard SATA data cable", "A 24-pin ATX connector", "A single 4-pin Molex connector"],
-            correctAnswers: ["Two 8-pin power connectors"]
+            correctAnswer: "Two 8-pin power connectors"
           },
           {
             id: 215,
             question: "Which type of motherboard expansion slot has four types ranging from x1 to x16?",
             options: ["PCIe", "PCI", "AGP", "ISA"],
-            correctAnswers: ["PCIe"]
+            correctAnswer: "PCIe"
           },
           {
             id: 216,
             question: "What is the primary physical characteristic that creates the image on paper in a thermal printer?",
             options: ["Heat from the print head.", "Ink sprayed through microscopic nozzles.", "Toner melted by a fuser assembly.", "A ribbon struck by metal pins."],
-            correctAnswers: ["Heat from the print head."]
+            correctAnswer: "Heat from the print head."
           },
           {
             id: 217,
@@ -613,13 +489,13 @@
               "They require a constant wired internet connection.", 
               "They rely on physical keyboards for navigation."
             ],
-            correctAnswers: ["They have black and white displays optimized for reading text."]
+            correctAnswer: "They have black and white displays optimized for reading text."
           },
           {
             id: 218,
             question: "Which cloud service model includes the OS and applications stack and is typically requested by developers?",
             options: ["Platform as a Service (PaaS)", "Software as a Service (SaaS)", "Infrastructure as a Service (IaaS)", "IT as a Service (ITaaS)"],
-            correctAnswers: ["Platform as a Service (PaaS)"]
+            correctAnswer: "Platform as a Service (PaaS)"
           },
           {
             id: 219,
@@ -630,7 +506,7 @@
               "Wearing clothing made of synthetic fibers", 
               "Placing the PC on a carpeted floor"
             ],
-            correctAnswers: ["Working on a grounded antistatic mat"]
+            correctAnswer: "Working on a grounded antistatic mat"
           },
           {
             id: 220,
@@ -641,143 +517,143 @@
               "The technician can end the call sooner.", 
               "The customer will fix the problem themselves."
             ],
-            correctAnswers: ["The customer will relax, making them more likely to provide the necessary information."]
+            correctAnswer: "The customer will relax, making them more likely to provide the necessary information."
           },
           {
             id: 221,
             question: "What is the maximum amount of RAM memory supported by a 32-bit (x86-32) processor architecture?",
             options: ["4 GB", "8 GB", "16 GB", "128 GB"],
-            correctAnswers: ["4 GB"]
+            correctAnswer: "4 GB"
           },
           {
             id: 301,
             question: "Which of the following is a potential limitation of a laptop compared to a desktop?",
             options: ["Lack of expansion capability.", "Shorter battery life.", "Larger physical size.", "Higher power consumption."],
-            correctAnswers: ["Lack of expansion capability."]
+            correctAnswer: "Lack of expansion capability."
           },
           {
             id: 302,
             question: "Which storage device will provide better performance, reliability, and energy efficiency?",
             options: ["an SSD (Solid State Drive).", "an HDD.", "a USB 2.0 flash drive.", "a magnetic tape."],
-            correctAnswers: ["an SSD (Solid State Drive)."]
+            correctAnswer: "an SSD (Solid State Drive)."
           },
           {
             id: 303,
             question: "What would be the best solution for the customer to share a keyboard between two computers?",
             options: ["KVM switch (Keyboard, Video, Mouse switch).", "USB hub.", "Network switch.", "HDMI splitter."],
-            correctAnswers: ["KVM switch (Keyboard, Video, Mouse switch)."]
+            correctAnswer: "KVM switch (Keyboard, Video, Mouse switch)."
           },
           {
             id: 304,
             question: "Which expansion bus transmits data serially through two paths?",
             options: ["PCIe (PCI Express).", "PCI.", "AGP.", "ISA."],
-            correctAnswers: ["PCIe (PCI Express)."]
+            correctAnswer: "PCIe (PCI Express)."
           },
           {
             id: 305,
             question: "What is the primary purpose of the Fn key on most laptops?",
             options: ["To activate a second function on a dual-purpose key.", "To turn on the laptop.", "To format the hard drive.", "To open the BIOS settings."],
-            correctAnswers: ["To activate a second function on a dual-purpose key."]
+            correctAnswer: "To activate a second function on a dual-purpose key."
           },
           {
             id: 306,
             question: "What is a characteristic of ROM?",
             options: ["a chip that cannot be erased or rewritten and is now obsolete.", "volatile memory that clears when powered off.", "a magnetic storage medium.", "a cloud-based storage solution."],
-            correctAnswers: ["a chip that cannot be erased or rewritten and is now obsolete."]
+            correctAnswer: "a chip that cannot be erased or rewritten and is now obsolete."
           },
           {
             id: 307,
             question: "What type of memory module is used in a desktop (tower) computer?",
             options: ["DIMM (Dual In-line Memory Module).", "SODIMM.", "MicroDIMM.", "Flash Drive."],
-            correctAnswers: ["DIMM (Dual In-line Memory Module)."]
+            correctAnswer: "DIMM (Dual In-line Memory Module)."
           },
           {
             id: 308,
             question: "What is a characteristic of Static RAM (SRAM)?",
             options: ["It is used for cache memory.", "It is used for main system memory (RAM).", "It is nonvolatile.", "It is the slowest type of memory."],
-            correctAnswers: ["It is used for cache memory."]
+            correctAnswer: "It is used for cache memory."
           },
           {
             id: 309,
             question: "What is a characteristic of PROM?",
             options: ["chips that are manufactured blank and then can be programmed once by a PROM programmer.", "chips that can be erased via UV light.", "chips used for temporary cache.", "chips that require constant power."],
-            correctAnswers: ["chips that are manufactured blank and then can be programmed once by a PROM programmer."]
+            correctAnswer: "chips that are manufactured blank and then can be programmed once by a PROM programmer."
           },
           {
             id: 310,
             question: "Which filtering method uses the physical address to specify which device is allowed or blocked from a network?",
             options: ["MAC address filtering.", "IP address filtering.", "Port filtering.", "Protocol filtering."],
-            correctAnswers: ["MAC address filtering."]
+            correctAnswer: "MAC address filtering."
           },
           {
             id: 311,
             question: "Which feature of a smartphone allows other Wi-Fi devices to access the internet?",
             options: ["Hotspot", "Bluetooth", "NFC", "Airplane mode"],
-            correctAnswers: ["Hotspot"]
+            correctAnswer: "Hotspot"
           },
           {
             id: 312,
             question: "What feature of a smartphone provides voice, text, and data?",
             options: ["Cellular connectivity options.", "Wi-Fi connectivity.", "Bluetooth connectivity.", "NFC connectivity."],
-            correctAnswers: ["Cellular connectivity options."]
+            correctAnswer: "Cellular connectivity options."
           },
           {
             id: 313,
             question: "What is the definition of \"tethering\"?",
             options: ["Sharing the cellular data connection with other devices.", "Connecting a smartphone to a TV.", "Charging a phone via USB.", "Transferring photos via Bluetooth."],
-            correctAnswers: ["Sharing the cellular data connection with other devices."]
+            correctAnswer: "Sharing the cellular data connection with other devices."
           },
           {
             id: 314,
             question: "Which service is responsible for processing HTTP requests?",
             options: ["The web server", "The database server", "The file server", "The DHCP server"],
-            correctAnswers: ["The web server"]
+            correctAnswer: "The web server"
           },
           {
             id: 315,
             question: "What is the name of the core of the operating system?",
             options: ["Kernel", "Shell", "GUI", "Bootloader"],
-            correctAnswers: ["Kernel"]
+            correctAnswer: "Kernel"
           },
           {
             id: 316,
             question: "Which interface allows the OS to configure power management schemes?",
             options: ["The Advanced Configuration and Power Interface (ACPI).", "UEFI", "BIOS", "MBR"],
-            correctAnswers: ["The Advanced Configuration and Power Interface (ACPI)."]
+            correctAnswer: "The Advanced Configuration and Power Interface (ACPI)."
           },
           {
             id: 317,
             question: "What are two disadvantages of traditional (non-virtual) server deployment?",
             options: ["Wasted resources and single-point of failure.", "High security and high cost.", "Low power consumption and low heat.", "Easy management and fast deployment."],
-            correctAnswers: ["Wasted resources and single-point of failure."]
+            correctAnswer: "Wasted resources and single-point of failure."
           },
           {
             id: 318,
             question: "What is the fundamental technology that allows cloud computing to work?",
             options: ["Virtualization", "Subnetting", "Encryption", "Routing"],
-            correctAnswers: ["Virtualization"]
+            correctAnswer: "Virtualization"
           },
           {
             id: 319,
             question: "Which cloud category allows access to applications via a web browser?",
             options: ["Software as a Service (SaaS).", "Platform as a Service (PaaS).", "Infrastructure as a Service (IaaS).", "IT as a Service (ITaaS)."],
-            correctAnswers: ["Software as a Service (SaaS)."]
+            correctAnswer: "Software as a Service (SaaS)."
           },
           {
             id: 320,
             question: "Which of the following is an example of active cooling?",
             options: ["Add an additional case fan.", "Use a larger heat sink.", "Apply thermal compound.", "Keep the case open."],
-            correctAnswers: ["Add an additional case fan."]
+            correctAnswer: "Add an additional case fan."
           },
           {
             id: 321,
             question: "What tool or method provides the best protection against ESD (Static Electricity)?",
             options: ["Working on a grounded antistatic mat with an antistatic wrist strap.", "Wearing rubber-soled shoes.", "Using safety goggles.", "Wearing heavy gloves."],
-            correctAnswers: ["Working on a grounded antistatic mat with an antistatic wrist strap."]
+            correctAnswer: "Working on a grounded antistatic mat with an antistatic wrist strap."
           }
         ];
 
-        // Алгоритм перемешивания массива
+        // Алгоритм Фишера-Йейтса для перемешивания массива
         const shuffleArray = (array) => {
           const shuffled = [...array];
           for (let i = shuffled.length - 1; i > 0; i--) {
@@ -787,6 +663,15 @@
           return shuffled;
         };
 
+        // Подготавливаем вопросы и сразу перемешиваем варианты ответов внутри них
+        const prepareQuestions = () => {
+          const shuffledQuestions = shuffleArray(allQuestions);
+          return shuffledQuestions.map(q => ({
+            ...q,
+            options: shuffleArray(q.options) // Перемешиваем варианты ответов для каждого вопроса
+          }));
+        };
+
         function App() {
           const [questions, setQuestions] = useState([]);
           const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -794,21 +679,16 @@
           const [isFinished, setIsFinished] = useState(false);
 
           useEffect(() => {
-            // Перемешиваем все 100 вопросов
-            setQuestions(shuffleArray(allQuestions));
+            // При первой загрузке подготавливаем базу
+            setQuestions(prepareQuestions());
           }, []);
 
           const handleOptionSelect = (option, questionId) => {
-            const q = questions.find(q => q.id === questionId);
-            const maxSelections = q.correctAnswers.length;
-            const currentSelections = userAnswers[questionId] || [];
-
-            if (currentSelections.includes(option)) return;
-            if (currentSelections.length >= maxSelections) return;
+            if (userAnswers[questionId]) return; // Если ответ уже дан, блокируем выбор
 
             setUserAnswers({
               ...userAnswers,
-              [questionId]: [...currentSelections, option]
+              [questionId]: option
             });
           };
 
@@ -827,7 +707,7 @@
           };
 
           const restartQuiz = () => {
-            setQuestions(shuffleArray(allQuestions));
+            setQuestions(prepareQuestions()); // Заново перемешиваем вопросы И ответы
             setCurrentQuestionIndex(0);
             setUserAnswers({});
             setIsFinished(false);
@@ -836,10 +716,8 @@
           const calculateScore = () => {
             let score = 0;
             questions.forEach((q) => {
-              const selected = userAnswers[q.id] || [];
-              if (selected.length === q.correctAnswers.length) {
-                const isAllCorrect = selected.every(val => q.correctAnswers.includes(val));
-                if (isAllCorrect) score++;
+              if (userAnswers[q.id] === q.correctAnswer) {
+                score++;
               }
             });
             return score;
@@ -870,37 +748,27 @@
                   <div className="p-6 sm:p-8 space-y-6">
                     <h2 className="text-xl font-bold border-b pb-2 mb-4">Detailed Review</h2>
                     {questions.map((q, index) => {
-                      const selected = userAnswers[q.id] || [];
-                      const isPerfect = selected.length === q.correctAnswers.length && selected.every(val => q.correctAnswers.includes(val));
+                      const userAnswer = userAnswers[q.id];
+                      const isCorrect = userAnswer === q.correctAnswer;
                       
                       return (
-                        <div key={q.id} className={`p-4 rounded-xl border-2 ${isPerfect ? 'border-green-100 bg-green-50' : 'border-red-100 bg-red-50'}`}>
+                        <div key={q.id} className={`p-4 rounded-xl border-2 ${isCorrect ? 'border-green-100 bg-green-50' : 'border-red-100 bg-red-50'}`}>
                           <div className="flex items-start gap-3">
                             <div className="mt-1 flex-shrink-0">
-                              {isPerfect ? <CheckCircle2 className="w-6 h-6 text-green-600" /> : <XCircle className="w-6 h-6 text-red-600" />}
+                              {isCorrect ? <CheckCircle2 className="w-6 h-6 text-green-600" /> : <XCircle className="w-6 h-6 text-red-600" />}
                             </div>
                             <div className="flex-1">
                               <h3 className="font-semibold text-slate-800 mb-2">{index + 1}. {q.question}</h3>
-                              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3 text-sm">
-                                <div className="bg-white p-3 rounded-lg border border-slate-200">
-                                  <p className="text-slate-500 font-medium mb-1 border-b pb-1">Your Answers:</p>
-                                  {selected.length > 0 ? (
-                                    <ul className="space-y-1 mt-2">
-                                      {selected.map((ans, i) => (
-                                        <li key={i} className={`flex items-start gap-2 ${q.correctAnswers.includes(ans) ? 'text-green-700' : 'text-red-600 line-through'}`}>• {ans}</li>
-                                      ))}
-                                    </ul>
-                                  ) : (
-                                    <span className="italic text-slate-400">No answer provided</span>
-                                  )}
-                                </div>
-                                {!isPerfect && (
-                                  <div className="bg-green-50 p-3 rounded-lg border border-green-200">
-                                    <p className="text-green-800 font-medium mb-1 border-b border-green-200 pb-1">Correct Answers:</p>
-                                    <ul className="space-y-1 mt-2 text-green-700 font-medium">
-                                      {q.correctAnswers.map((ans, i) => <li key={i}>• {ans}</li>)}
-                                    </ul>
-                                  </div>
+                              <div className="space-y-1 text-sm mt-2">
+                                <p className={`${isCorrect ? 'text-green-700 font-medium' : 'text-slate-600 line-through'}`}>
+                                  <span className="text-slate-500 font-normal">Your answer: </span> 
+                                  {userAnswer || <span className="italic text-slate-400">No answer provided</span>}
+                                </p>
+                                {!isCorrect && (
+                                  <p className="text-green-700 font-medium bg-green-50 p-2 rounded-lg mt-2 inline-block border border-green-200">
+                                    <span className="text-slate-500 font-normal mr-1">Correct answer: </span>
+                                    {q.correctAnswer}
+                                  </p>
                                 )}
                               </div>
                             </div>
@@ -917,9 +785,7 @@
           // Экран теста
           const currentQuestion = questions[currentQuestionIndex];
           const progress = ((currentQuestionIndex) / questions.length) * 100;
-          const maxSelections = currentQuestion.correctAnswers.length;
-          const currentSelections = userAnswers[currentQuestion.id] || [];
-          const isLocked = currentSelections.length === maxSelections;
+          const hasAnsweredCurrent = !!userAnswers[currentQuestion.id];
 
           return (
             <div className="min-h-screen bg-slate-50 py-6 px-4 sm:px-6 lg:px-8 font-sans flex flex-col items-center justify-center">
@@ -934,11 +800,6 @@
                     <span className="bg-indigo-50 text-indigo-700 py-1 px-3 rounded-full font-semibold">
                       Question {currentQuestionIndex + 1} of {questions.length}
                     </span>
-                    {maxSelections > 1 && (
-                      <span className="flex items-center gap-1 text-amber-600 bg-amber-50 px-3 py-1 rounded-full font-medium">
-                        <AlertCircle className="w-4 h-4" /> Select exactly {maxSelections}
-                      </span>
-                    )}
                   </div>
 
                   <h2 className="text-xl sm:text-2xl font-bold text-slate-800 mb-8 leading-snug">
@@ -947,28 +808,19 @@
 
                   <div className="space-y-3">
                     {currentQuestion.options.map((option, idx) => {
-                      const isSelected = currentSelections.includes(option);
-                      const isCorrectOption = currentQuestion.correctAnswers.includes(option);
+                      const isSelected = userAnswers[currentQuestion.id] === option;
+                      const isCorrectOption = option === currentQuestion.correctAnswer;
                       
                       let buttonStyle = "border-slate-200 hover:border-indigo-300 hover:bg-slate-50 text-slate-700";
                       let iconStyle = "text-slate-300";
-                      let IconComponent = maxSelections > 1 ? Square : CircleIcon;
                       
-                      if (isSelected) {
-                        IconComponent = maxSelections > 1 ? CheckSquare : CheckCircle2;
+                      if (hasAnsweredCurrent) {
                         if (isCorrectOption) {
                           buttonStyle = "border-green-500 bg-green-50 text-green-800 ring-1 ring-green-500 shadow-sm";
                           iconStyle = "text-green-500";
-                        } else {
-                          IconComponent = XCircle;
+                        } else if (isSelected && !isCorrectOption) {
                           buttonStyle = "border-red-500 bg-red-50 text-red-800 ring-1 ring-red-500 shadow-sm";
                           iconStyle = "text-red-500";
-                        }
-                      } else if (isLocked) {
-                        if (isCorrectOption) {
-                          buttonStyle = "border-green-300 bg-green-50/50 text-green-700 opacity-80";
-                          iconStyle = "text-green-400";
-                          IconComponent = maxSelections > 1 ? CheckSquare : CheckCircle2;
                         } else {
                           buttonStyle = "border-slate-200 bg-white text-slate-400 opacity-50";
                           iconStyle = "text-slate-200";
@@ -979,11 +831,17 @@
                         <button
                           key={idx}
                           onClick={() => handleOptionSelect(option, currentQuestion.id)}
-                          disabled={isLocked || isSelected}
-                          className={`w-full text-left p-4 rounded-xl border-2 transition-all duration-200 flex items-center gap-4 ${buttonStyle} ${(isLocked || isSelected) ? 'cursor-default' : 'cursor-pointer'}`}
+                          disabled={hasAnsweredCurrent}
+                          className={`w-full text-left p-4 rounded-xl border-2 transition-all duration-200 flex items-center gap-4 ${buttonStyle} ${hasAnsweredCurrent ? 'cursor-default' : 'cursor-pointer'}`}
                         >
                           <div className="flex-shrink-0 mt-0.5">
-                            <IconComponent className={`w-6 h-6 ${iconStyle}`} />
+                            {hasAnsweredCurrent && isCorrectOption ? (
+                                <CheckCircle2 className={`w-6 h-6 ${iconStyle}`} />
+                            ) : hasAnsweredCurrent && isSelected && !isCorrectOption ? (
+                                <XCircle className={`w-6 h-6 ${iconStyle}`} />
+                            ) : (
+                                <CircleIcon className={`w-6 h-6 ${iconStyle}`} />
+                            )}
                           </div>
                           <span className="text-base font-medium leading-tight">
                             {option}
@@ -999,7 +857,7 @@
                     <ChevronLeft className="w-5 h-5" /> Back
                   </button>
 
-                  <button onClick={handleNext} disabled={!isLocked} className={`flex items-center gap-1 font-medium py-2.5 px-6 rounded-full transition-all ${!isLocked ? 'bg-slate-200 text-slate-400 cursor-not-allowed' : 'bg-indigo-600 hover:bg-indigo-700 text-white shadow-md hover:shadow-lg transform active:scale-95'}`}>
+                  <button onClick={handleNext} disabled={!hasAnsweredCurrent} className={`flex items-center gap-1 font-medium py-2.5 px-6 rounded-full transition-all ${!hasAnsweredCurrent ? 'bg-slate-200 text-slate-400 cursor-not-allowed' : 'bg-indigo-600 hover:bg-indigo-700 text-white shadow-md hover:shadow-lg transform active:scale-95'}`}>
                     {currentQuestionIndex === questions.length - 1 ? 'Finish' : 'Next'}
                     {currentQuestionIndex !== questions.length - 1 && <ChevronRight className="w-5 h-5" />}
                   </button>
